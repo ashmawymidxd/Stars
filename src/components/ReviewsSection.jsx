@@ -108,7 +108,7 @@ function ReviewsSection() {
             <p className="text-xl text-gray-400 font-bold"> آراء العملاء</p>
             <h2 className="text-xl md:text-3xl font-bold text-gray-800 max-w-3xl">
               استمع إلي عملائنا
-              <span className="text-[#FF6969]"> نجاح حقيقي</span>
+              <span className="text-[black]"> نجاح حقيقي</span>
             </h2>
           </div>
 
@@ -116,13 +116,13 @@ function ReviewsSection() {
           <div className="flex gap-3">
             <button
               onClick={nextSlide}
-              className="bg-[#FF6969] text-white p-3 rounded-full hover:bg-orange-600 transition-colors"
+              className="bg-[black] text-white p-3 rounded-full hover:bg-black transition-colors"
             >
               <ChevronRight size={20} />
             </button>
             <button
               onClick={prevSlide}
-              className="bg-[#FF6969] text-white p-3 rounded-full hover:bg-orange-600 transition-colors"
+              className="bg-[black] text-white p-3 rounded-full hover:bg-black transition-colors"
             >
               <ChevronLeft size={20} />
             </button>
@@ -188,7 +188,7 @@ function ReviewsSection() {
                 key={index}
                 onClick={() => setCurrentSlide(index)}
                 className={`w-3 h-3 rounded-full transition-colors ${
-                  currentSlide === index ? "bg-orange-500" : "bg-gray-300"
+                  currentSlide === index ? "bg-black" : "bg-gray-300"
                 }`}
               />
             ))}

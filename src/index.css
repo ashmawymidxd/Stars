@@ -36,7 +36,7 @@
 }
 
 .highlight {
-  color: #ff6969;
+  color: black;
 }
 
 .services-grid {
@@ -111,7 +111,7 @@
 }
 
 .service-icon {
-  background: #ff6969;
+  background: black;
   padding: 0.25rem;
   border-radius: 0.5rem;
   font-size: 1.5rem;
@@ -168,7 +168,7 @@
 }
 
 .service-description p::-webkit-scrollbar-thumb {
-  background: #ff6969;
+  background: black;
   border-radius: 2px;
 }
 

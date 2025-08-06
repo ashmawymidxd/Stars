@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ArrowUp } from "lucide-react"; // Added ArrowUp icon
-import logo from "../assets/header/logo.jpg";
+import logo from "../assets/logo/dark-logo.png";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,8 +53,7 @@ function Header() {
       <div className="container mx-auto px-5">
         <div className="flex items-center justify-between py-5">
           <div className="flex items-center gap-4">
-            <img src={logo} alt="" width={55.85} height={55.85} />
-            <span className="text-gray-800 text-[25px] ">النجوم</span>
+            <img src={logo} alt="" className="h-[70px] rounded-full" />
           </div>
 
           {/* Desktop Navigation */}
@@ -65,8 +64,8 @@ function Header() {
                 onClick={() => scrollToSection(item.id)}
                 className={`text-gray-900 text-[20px] lg:text-[25px] ${
                   activeSection === item.id
-                    ? "text-orange-500"
-                    : "text-gray-700 hover:text-orange-500"
+                    ? "text-black"
+                    : "text-gray-700 hover:text-black"
                 }`}
               >
                 {item.label}
@@ -104,7 +103,7 @@ function Header() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-right py-2 text-lg font-medium text-gray-700 hover:text-orange-500"
+                className="block w-full text-right py-2 text-lg font-medium text-gray-700"
               >
                 {item.label}
               </button>

@@ -8,14 +8,14 @@ function ContactSection() {
             <div className="text-start">
               <p className="text-xl text-gray-400 font-bold"> اتصل بنا</p>
               <h2 className="text-xl md:text-3xl font-bold text-gray-800 max-w-3xl">
-                الأن <span className="text-[#FF6969]"> تواصل معنا</span> وأخبرنا
+                الأن <span className="text-[black]"> تواصل معنا</span> وأخبرنا
                 عن خططك التجارية، فنحن هنا لمساعدتك على مدار ساعة
               </h2>
             </div>
 
             <div className="my-5">
               <div className="flex items-center mt-3">
-                <div className="bg-[#FF6969] text-white p-3 rounded-full ml-4">
+                <div className="bg-[black] text-white p-3 rounded-full ml-4">
                   <Phone size={20} />
                 </div>
                 <a href="tel:+201554300351">
@@ -25,7 +25,7 @@ function ContactSection() {
               </div>
 
               <div className="flex items-center mt-3">
-                <div className="bg-[#FF6969] text-white p-3 rounded-full ml-4">
+                <div className="bg-[black] text-white p-3 rounded-full ml-4">
                   <Mail size={20} />
                 </div>
                 <div>
@@ -35,7 +35,7 @@ function ContactSection() {
               </div>
 
               <div className="flex items-center mt-3">
-                <div className="bg-[#FF6969] text-white p-3 rounded-full ml-4">
+                <div className="bg-[black] text-white p-3 rounded-full ml-4">
                   <MapPin size={20} />
                 </div>
                 <div>
@@ -47,7 +47,7 @@ function ContactSection() {
               </div>
 
               <div className="flex items-center mt-3">
-                <div className="bg-[#FF6969] text-white p-3 rounded-full ml-4">
+                <div className="bg-[black] text-white p-3 rounded-full ml-4">
                   <Clock size={20} />
                 </div>
                 <div>

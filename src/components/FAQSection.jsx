@@ -30,7 +30,7 @@ function FAQSection() {
             <p className="text-xl text-gray-400 font-bold"> الأسئلة الشائعة</p>
             <h2 className="text-xl md:text-3xl font-bold text-gray-800 ">
               كل ما تحتاج 
-              <span className="text-[#FF6969]">  لمعرفته</span>
+              <span className="text-[black]">  لمعرفته</span>
             </h2>
           </div>
 

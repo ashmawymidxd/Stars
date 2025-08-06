@@ -55,7 +55,7 @@ function ServicesSection() {
         <div className="text-start">
           <p className="section-subtitle">ما نقدمه</p>
           <h2 className="text-xl md:text-3xl max-w-2xl">
-            متخصصون في تقديم <span className="highlight">حلول متكاملة</span>{" "}
+            متخصصون في تقديم <span className="text-black">حلول متكاملة</span>{" "}
             للمشاريع الإنشائية والخدمية وفق أعلى معايير الجودة والسلامة
           </h2>
         </div>

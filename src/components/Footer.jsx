@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
-import logo from "../assets/header/logo.jpg";
+import logo from "../assets/logo/light-logo.png";
 function Footer() {
   return (
     <footer className="bg-black text-white py-12">
@@ -7,7 +7,7 @@ function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center mb-4">
-              <img src={logo} width={50} className="rounded-full" />
+              <img src={logo} width={300} className="rounded-full" />
             </div>
             <p className="text-gray-400 mb-4">
               شركة مقاولات سعودية متخصصة في تقديم حلول إنشائية متكاملة بأعلى
