@@ -10,11 +10,11 @@ import {
 } from "lucide-react";
 function HeroSection() {
   return (
-    <section id="home" className="pt-20 bg-white mt-10">
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center mb-12">
+    <section id="home" className="mt-[150px] bg-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center">
           <h1 className="text-xl md:text-3xl font-bold text-gray-800 mb-6 max-w-4xl m-auto">
-            شركة <span className="text-orange-500">النجوم</span> للخدمات هي شركة
+            شركة <span className="highlight">النجوم</span> للخدمات هي شركة
             مقاولات سعودية متخصصة في تقديم حلول متكاملة للمشاريع الإنشائية
             والخدمية،
           </h1>
@@ -43,9 +43,9 @@ function HeroSection() {
         {/* Infographic Section */}
         <div
           style={{ backgroundImage: `url(${banner})`, backgroundSize: 1490 }}
-          className="w-full h-[550px] bg-[#FDF3E0]  rounded-xl flex items-center justify-between overflow-hidden"
+          className="w-full h-[550px] bg-[#FDF3E0] rounded-xl flex items-center justify-between overflow-hidden mt-[50px]"
         >
-          <div className="flex justify-center items-center p-10 gap-10 w-full">
+          <div className="flex justify-center items-center p-5 md:p-10 gap-10 w-full">
             <span className="p-5 bg-white rounded-full overflow-hidden hidden md:block">
               <img src={logo} alt="" width={180} />
             </span>

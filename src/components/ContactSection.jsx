@@ -5,15 +5,15 @@ function ContactSection() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <div className="text-start mb-10">
+            <div className="text-start">
               <p className="text-xl text-gray-400 font-bold"> اتصل بنا</p>
-              <h2 className="text-4xl font-bold text-gray-800 max-w-3xl">
+              <h2 className="text-xl md:text-3xl font-bold text-gray-800 max-w-3xl">
                 الأن <span className="text-[#FF6969]"> تواصل معنا</span> وأخبرنا
                 عن خططك التجارية، فنحن هنا لمساعدتك على مدار ساعة
               </h2>
             </div>
 
-            <div className="space-y-6">
+            <div className="my-5">
               <div className="flex items-center">
                 <div className="bg-[#FF6969] text-white p-3 rounded-full ml-4">
                   <Phone size={20} />
@@ -60,7 +60,7 @@ function ContactSection() {
 
               <a
                 href="https://wa.me/+201554300351"
-                className="border w-60 flex items-center justify-center bg-black text-gray-200 px-4 py-2  gap-4 rounded-full font-medium hover:bg-gray-700 transition-colors"
+                className="border w-60 flex mt-8 items-center justify-center bg-black text-gray-200 px-4 py-2  gap-4 rounded-full font-medium hover:bg-gray-700 transition-colors"
               >
                 تواصل معنا عبر واتساب
               </a>

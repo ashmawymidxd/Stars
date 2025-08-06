@@ -23,22 +23,22 @@ function FAQSection() {
   ];
 
   return (
-    <section className="bg-white">
+    <section className="bg-white mt-10">
       <div className="container mx-auto px-4">
         <div className="w-2xl mx-auto">
-          <div className="text-center mb-10">
+          <div className="text-center">
             <p className="text-xl text-gray-400 font-bold"> الأسئلة الشائعة</p>
-            <h2 className="text-4xl font-bold text-gray-800 ">
+            <h2 className="text-xl md:text-3xl font-bold text-gray-800 ">
               كل ما تحتاج 
               <span className="text-[#FF6969]">  لمعرفته</span>
             </h2>
           </div>
 
-          <div className="space-y-4">
+          <div className="mt-10">
             {faqs.map((faq, index) => (
               <div 
                 key={index} 
-                className={`border border-gray-200 rounded-lg overflow-hidden ${
+                className={`border border-gray-200 rounded-lg overflow-hidden my-3 ${
                   openFAQ === index ? "bg-gray-100" : ""
                 }`}
               >

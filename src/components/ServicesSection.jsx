@@ -52,15 +52,15 @@ function ServicesSection() {
   return (
     <section id="services" className="services-section">
       <div className="container mx-auto px-4">
-        <div className="text-start mb-16">
+        <div className="text-start">
           <p className="section-subtitle">ما نقدمه</p>
-          <h2 className="section-title">
-            متخصصة في تقديم <span className="highlight">حلول متكاملة</span>{" "}
+          <h2 className="text-xl md:text-3xl max-w-2xl">
+            متخصصون في تقديم <span className="highlight">حلول متكاملة</span>{" "}
             للمشاريع الإنشائية والخدمية وفق أعلى معايير الجودة والسلامة
           </h2>
         </div>
 
-        <div className="services-grid">
+        <div className="services-grid mt-[50px]">
           {services.map((service, index) => (
             <div key={index} className="service-card">
               <div className="service-image-container">
@@ -87,7 +87,6 @@ function ServicesSection() {
 }
 
 export default ServicesSection;
-
 
 //  import  {
 //   RainbowIcon,

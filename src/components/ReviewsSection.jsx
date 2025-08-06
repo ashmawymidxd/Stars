@@ -101,12 +101,12 @@ function ReviewsSection() {
   };
 
   return (
-    <section id="reviews" className="py-20">
+    <section id="reviews" className="">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center mb-10">
+        <div className="flex justify-between items-center">
           <div className="text-start">
             <p className="text-xl text-gray-400 font-bold"> آراء العملاء</p>
-            <h2 className="text-4xl font-bold text-gray-800 max-w-3xl">
+            <h2 className="text-xl md:text-3xl font-bold text-gray-800 max-w-3xl">
               استمع إلي عملائنا
               <span className="text-[#FF6969]"> نجاح حقيقي</span>
             </h2>
@@ -129,7 +129,7 @@ function ReviewsSection() {
           </div>
         </div>
 
-        <div className="relative">
+        <div className="relative mt-10">
           {/* Desktop View - 3 Cards */}
           <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-6">
             {getVisibleSlides().map((review, index) => (

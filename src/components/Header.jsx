@@ -50,7 +50,7 @@ function Header() {
 
   return (
     <header className="bg-white border-b fixed top-0 w-full z-50">
-      <div className="container mx-auto px-5 ">
+      <div className="container mx-auto px-5">
         <div className="flex items-center justify-between py-5">
           <div className="flex items-center gap-4">
             <img src={logo} alt="" width={55.85} height={55.85} />
