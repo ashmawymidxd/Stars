@@ -53,7 +53,7 @@ function Header() {
       <div className="container mx-auto px-5">
         <div className="flex items-center justify-between py-5">
           <div className="flex items-center gap-4 bg-black px-2 rounded-full">
-            <img src={logo} alt="" className="h-[70px] rounded-full" />
+            <img src={logo} alt="" className="h-[65px] rounded-full" />
           </div>
 
           {/* Desktop Navigation */}

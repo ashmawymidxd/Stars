@@ -11,7 +11,7 @@ export default function Loader({ visible = true }) {
           {[...Array(4)].map((_, i) => (
             <div
               key={i}
-              className="w-4 h-4 rounded-full bg-yellow-500 animate-bounce"
+              className="w-4 h-4 rounded-full bg-black animate-bounce"
               style={{
                 animationDelay: `${i * 0.15}s`,
                 animationDuration: '0.8s',
