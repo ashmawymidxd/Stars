@@ -51,7 +51,7 @@ function HeroSection() {
             </span>
             <div className="w-full">
               {/* one */}
-              <div className="bg-black mr-0 md:mr-[-70px]  rounded-full p-2 w-[400px] flex items-center justify-start gap-3 my-3">
+              <div className="bg-[#000000b7] mr-0 md:mr-[-70px]  rounded-full p-2 w-[400px] flex items-center justify-start gap-3 my-3">
                 <span className="p-1  rounded-full bg-white flex items-center justify-center">
                   <span className="p-1  rounded-full bg-black">
                     <RainbowIcon className="text-white" />
@@ -60,7 +60,7 @@ function HeroSection() {
                 <h1 className="font-bold text-white text-xl">توريد مياه</h1>
               </div>
               {/* tow */}
-              <div className="bg-black mr-0 md:mr-[-20px]  rounded-full p-2 w-[400px] flex items-center justify-start gap-3 my-3">
+              <div className="bg-[#000000b7] mr-0 md:mr-[-20px]  rounded-full p-2 w-[400px] flex items-center justify-start gap-3 my-3">
                 <span className="p-1  rounded-full bg-white flex items-center justify-center">
                   <span className="p-1  rounded-full bg-black">
                     <BinocularsIcon className="text-white" />
@@ -71,7 +71,7 @@ function HeroSection() {
                 </h1>
               </div>
               {/* three */}
-              <div className="bg-black rounded-full p-2 w-[400px] flex items-center justify-start gap-3 my-3">
+              <div className="bg-[#000000b7] rounded-full p-2 w-[400px] flex items-center justify-start gap-3 my-3">
                 <span className="p-1  rounded-full bg-white flex items-center justify-center">
                   <span className="p-1  rounded-full bg-black">
                     <InspectIcon className="text-white" />
@@ -83,7 +83,7 @@ function HeroSection() {
                 </h1>
               </div>
               {/* four */}
-              <div className="bg-black mr-0 md:mr-[-20px]  rounded-full p-2 w-[400px] flex items-center justify-start gap-3 my-3">
+              <div className="bg-[#000000b7] mr-0 md:mr-[-20px]  rounded-full p-2 w-[400px] flex items-center justify-start gap-3 my-3">
                 <span className="p-1  rounded-full bg-white flex items-center justify-center">
                   <span className="p-1  rounded-full bg-black">
                     <BuildingIcon className="text-white" />
@@ -94,7 +94,7 @@ function HeroSection() {
                 </h1>
               </div>
               {/* five */}
-              <div className="bg-black mr-0 md:mr-[-70px]  rounded-full p-2 w-[400px] flex items-center justify-start gap-3 my-3">
+              <div className="bg-[#000000b7] mr-0 md:mr-[-70px]  rounded-full p-2 w-[400px] flex items-center justify-start gap-3 my-3">
                 <span className="p-1  rounded-full bg-white flex items-center justify-center">
                   <span className="p-1  rounded-full bg-black">
                     <WindIcon className="text-white" />
