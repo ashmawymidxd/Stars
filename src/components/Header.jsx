@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ArrowUp } from "lucide-react"; // Added ArrowUp icon
-import logo from "../assets/logo/dark-logo.png";
+import logo from "../assets/logo/light-logo.png";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,7 +52,7 @@ function Header() {
     <header className="bg-white border-b fixed top-0 w-full z-50">
       <div className="container mx-auto px-5">
         <div className="flex items-center justify-between py-5">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 bg-black px-2 rounded-full">
             <img src={logo} alt="" className="h-[70px] rounded-full" />
           </div>
 
