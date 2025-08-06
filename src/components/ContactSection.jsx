@@ -14,7 +14,7 @@ function ContactSection() {
             </div>
 
             <div className="my-5">
-              <div className="flex items-center">
+              <div className="flex items-center mt-3">
                 <div className="bg-[#FF6969] text-white p-3 rounded-full ml-4">
                   <Phone size={20} />
                 </div>
@@ -24,7 +24,7 @@ function ContactSection() {
                 </a>
               </div>
 
-              <div className="flex items-center">
+              <div className="flex items-center mt-3">
                 <div className="bg-[#FF6969] text-white p-3 rounded-full ml-4">
                   <Mail size={20} />
                 </div>
@@ -34,7 +34,7 @@ function ContactSection() {
                 </div>
               </div>
 
-              <div className="flex items-center">
+              <div className="flex items-center mt-3">
                 <div className="bg-[#FF6969] text-white p-3 rounded-full ml-4">
                   <MapPin size={20} />
                 </div>
@@ -46,7 +46,7 @@ function ContactSection() {
                 </div>
               </div>
 
-              <div className="flex items-center">
+              <div className="flex items-center mt-3">
                 <div className="bg-[#FF6969] text-white p-3 rounded-full ml-4">
                   <Clock size={20} />
                 </div>
