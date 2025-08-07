@@ -1,6 +1,11 @@
 // src/components/AboutSection.jsx
 import React, { useEffect, useRef, useState } from "react";
-import aboutImg from "../assets/about/about.jpg"; // put image at src/assets/about.jpg
+import aboutImg from "../assets/about/about.jpg";
+import S1 from "../assets/services/s (1).jpg";
+import S2 from "../assets/services/s (2).jpg";
+import S3 from "../assets/services/s (3).jpg";
+import S4 from "../assets/services/s (4).jpg";
+import S5 from "../assets/services/s (5).jpg";
 
 export default function AboutSection() {
   // content items (Arabic example)
@@ -94,12 +99,25 @@ export default function AboutSection() {
     setActive(index);
   };
 
+  // images swaper
+  const images = [aboutImg, S1, S2, S3, S4, S5];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000); // Change image every 500ms
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <section id="about" className="my-10 container mx-auto px-4">
       <div className="flex flex-col-reverse md:flex-row-reverse items-start gap-8">
         {/* Right: Image */}
         <div className="w-full md:w-1/2 relative">
-
           <div className="relative">
             {/* indicator bar (dark span) */}
             <div
@@ -160,8 +178,8 @@ export default function AboutSection() {
         <div className="w-full md:w-1/2">
           <div className="rounded-lg overflow-hidden">
             <img
-              src={aboutImg}
-              alt="about"
+              src={images[currentImageIndex]}
+              alt="Slideshow"
               className="w-full h-full object-cover md:h-[450px]"
             />
           </div>

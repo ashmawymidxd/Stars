@@ -47,7 +47,7 @@ function HeroSection() {
         >
           <div className="flex justify-center items-center p-5 md:p-10 gap-10 w-full">
             <span className="p-3 rounded-full overflow-hidden hidden md:block">
-              <img src={logo} alt="" width={150} />
+              <img src={logo} alt="" className="hidden" width={150} />
             </span>
             <div className="w-full">
               {/* one */}

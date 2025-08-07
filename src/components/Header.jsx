@@ -111,10 +111,12 @@ function Header() {
             {/* Mobile Contact Button */}
             <button
               onClick={() => scrollToSection("contact")}
-              className="flex items-center justify-end gap-2 w-full bg-black text-white px-4 py-2 rounded-lg mt-2"
+              className="w-auto flex items-center justify-center gap-3  bg-black text-white px-4 py-2 rounded-full mt-2"
             >
+              <div className="rounded-full p-1 bg-white">
+                <ArrowUp className="rotate-45 text-black" />
+              </div>
               تواصل معنا
-              <ArrowUp className="rotate-45" />
             </button>
           </nav>
         )}

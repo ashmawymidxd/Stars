@@ -103,9 +103,9 @@ function ReviewsSection() {
   return (
     <section id="reviews" className="">
       <div className="container mx-auto px-4">
+            <p className="text-xl text-gray-400 font-bold"> آراء العملاء</p>
         <div className="flex justify-between items-center">
           <div className="text-start">
-            <p className="text-xl text-gray-400 font-bold"> آراء العملاء</p>
             <h2 className="text-xl md:text-3xl font-bold text-gray-800 max-w-3xl">
               استمع إلي عملائنا
               <span className="text-[black]"> نجاح حقيقي</span>
