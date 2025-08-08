@@ -13,7 +13,7 @@ function ContactSection() {
               </h2>
             </div>
 
-            <div className="my-5">
+            <div className="my-10">
               <div className="flex items-center mt-3">
                 <div className="bg-[black] text-white p-3 rounded-full ml-4">
                   <Phone size={20} />

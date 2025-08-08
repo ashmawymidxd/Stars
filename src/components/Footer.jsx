@@ -1,13 +1,16 @@
 import { Phone, Mail, MapPin } from "lucide-react";
-import logo from "../assets/logo/light-logo.png";
+import logo from "../assets/logo/icone.png";
 function Footer() {
   return (
     <footer className="bg-black text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center mb-4">
-              <img src={logo} width={300} className="rounded-full" />
+            <div className="flex items-center gap-4 bg-black p-1 rounded-full">
+              <img src={logo} alt="" className="h-[60px] rounded-full" />
+              <span className="text-white font-bold text-xl px-2">
+                النجوم للمقاولات
+              </span>
             </div>
             <p className="text-gray-400 mb-4">
               شركة مقاولات سعودية متخصصة في تقديم حلول إنشائية متكاملة بأعلى

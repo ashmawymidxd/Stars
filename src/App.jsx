@@ -5,7 +5,7 @@ import Loader from "./components/Loader";
 import HeroSection from "./components/HeroSection";
 import ServicesSection from "./components/ServicesSection";
 import AboutSection from "./components/AboutSection";
-import ReviewsSection from "./components/ReviewsSection";
+// import ReviewsSection from "./components/ReviewsSection";
 import FAQSection from "./components/FAQSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
@@ -96,7 +96,7 @@ function App() {
         {/* pass ready flag to each section so it can show placeholder / real content */}
         <HeroSection ready={sectionsReady.hero} />
         <ServicesSection ready={sectionsReady.services} />
-        <ReviewsSection ready={sectionsReady.reviews} />
+        {/* <ReviewsSection ready={sectionsReady.reviews} /> */}
         <FAQSection ready={sectionsReady.faq} />
         <ContactSection ready={sectionsReady.contact} />
         <AboutSection ready={sectionsReady.about} />

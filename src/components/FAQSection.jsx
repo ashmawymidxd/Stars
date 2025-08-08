@@ -56,7 +56,7 @@ function FAQSection() {
                   />
                 </button>
                 {openFAQ === index && (
-                  <div className="px-6 pb-4">
+                  <div className="bg-gray-50 border-t-2 p-6">
                     <p className="text-gray-600">{faq.answer}</p>
                   </div>
                 )}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ArrowUp } from "lucide-react"; // Added ArrowUp icon
-import logo from "../assets/logo/light-logo.png";
+import logo from "../assets/logo/icone.png";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,7 +8,7 @@ function Header() {
   const navItems = [
     { id: "home", label: "الرئيسية" },
     { id: "services", label: "الخدمات" },
-    { id: "reviews", label: "آراء العملاء" },
+    // { id: "reviews", label: "آراء العملاء" },
     { id: "about", label: "من نحن" },
   ];
 
@@ -52,8 +52,9 @@ function Header() {
     <header className="bg-white border-b fixed top-0 w-full z-50">
       <div className="container mx-auto px-5">
         <div className="flex items-center justify-between py-5">
-          <div className="flex items-center gap-4 bg-black px-2 rounded-full">
-            <img src={logo} alt="" className="h-[65px] rounded-full" />
+          <div className="flex items-center gap-4 bg-black p-1 rounded-full">
+            <img src={logo} alt="" className="h-[60px] rounded-full" />
+            <span className="text-white font-bold text-xl px-2">النجوم للمقاولات</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -91,7 +92,7 @@ function Header() {
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
-          <div className="md:block hidden  rounded-full p-4 bg-gray-100 font-bold text-blue-600">
+          <div className="md:block hidden  rounded-full p-4 bg-gray-100 font-bold text-gray-900">
             AS
           </div>
         </div>
