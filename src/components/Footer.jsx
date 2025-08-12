@@ -103,9 +103,9 @@ function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-4">معلومات التواصل</h4>
             <div className="space-y-3 text-gray-400">
-              <a href="tel:+201554300351" className="flex items-center">
+              <a href="tel:+966567648029" className="flex items-center">
                 <Phone size={16} className="ml-2" />
-                +966123456567
+                +966567648029
               </a>
               <p className="flex items-center">
                 <Mail size={16} className="ml-2" />
