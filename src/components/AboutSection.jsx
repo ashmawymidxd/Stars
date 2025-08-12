@@ -1,5 +1,6 @@
 // src/components/AboutSection.jsx
 import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import aboutImg from "../assets/about/about.jpg";
 import S1 from "../assets/services/s (1).jpg";
 import S2 from "../assets/services/s (2).jpg";
@@ -8,7 +9,6 @@ import S4 from "../assets/services/s (4).jpg";
 import S5 from "../assets/services/s (5).jpg";
 
 export default function AboutSection() {
-  // content items (Arabic example)
   const items = [
     {
       title: "من نحن",
@@ -34,57 +34,44 @@ export default function AboutSection() {
   const indicatorRef = useRef(null);
   const timerRef = useRef(null);
 
-  // ensure there is a ref for each item
   itemRefs.current = items.map(
     (_, i) => itemRefs.current[i] ?? React.createRef()
   );
 
-  // function to move indicator to active item (compute position)
   const moveIndicator = (index) => {
     const container = containerRef.current;
     const el = itemRefs.current[index]?.current;
     const indicator = indicatorRef.current;
     if (!container || !el || !indicator) return;
 
-    // compute top offset relative to container
     const containerRect = container.getBoundingClientRect();
     const elRect = el.getBoundingClientRect();
     const top = elRect.top - containerRect.top + container.scrollTop;
 
-    // set styles for smooth move
     indicator.style.transform = `translateY(${top}px)`;
     indicator.style.height = `${elRect.height}px`;
   };
 
-  // set up auto cycle every 5000ms
   useEffect(() => {
-    // initial move after mount
     moveIndicator(active);
-
     const startTimer = () => {
       clearInterval(timerRef.current);
       timerRef.current = setInterval(() => {
         setActive((prev) => (prev + 1) % items.length);
       }, 5000);
     };
-
     startTimer();
-
-    // update on resize so indicator keeps correct position
-    const onResize = () => moveIndicator(active);
-    window.addEventListener("resize", onResize);
+    window.addEventListener("resize", () => moveIndicator(active));
 
     return () => {
       clearInterval(timerRef.current);
-      window.removeEventListener("resize", onResize);
+      window.removeEventListener("resize", () => moveIndicator(active));
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // run only once on mount
+  }, []);
 
-  // whenever active changes, move indicator
   useEffect(() => {
     moveIndicator(active);
-    // restart timer so it waits full 5000ms after manual change
     clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
       setActive((prev) => (prev + 1) % items.length);
@@ -94,47 +81,54 @@ export default function AboutSection() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active]);
 
-  // click handler for items
   const handleClick = (index) => {
     setActive(index);
   };
 
-  // images swaper
   const images = [aboutImg, S1, S2, S3, S4, S5];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      setCurrentImageIndex((prev) =>
+        prev === images.length - 1 ? 0 : prev + 1
       );
-    }, 5000); // Change image every 500ms
-
+    }, 5000);
     return () => clearInterval(interval);
   }, [images.length]);
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.15, duration: 0.5, ease: "easeOut" },
+    }),
+  };
 
   return (
     <section id="about" className="my-10 container mx-auto px-4">
       <div className="flex flex-col-reverse md:flex-row-reverse items-start gap-8">
-        {/* Right: Image */}
-        <div className="w-full md:w-1/2 relative">
+        {/* Right: Text + Indicator */}
+        <motion.div
+          className="w-full md:w-1/2 relative"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }} // animate every time in view
+          variants={fadeUp}
+          custom={0}
+        >
           <div className="relative">
-            {/* indicator bar (dark span) */}
             <div
               ref={indicatorRef}
               className="absolute -right-4 md:-right-6 w-1.5 bg-gray-800 rounded transition-transform duration-700 ease-in-out"
-              style={{
-                transform: "translateY(0px)",
-                top: 0,
-                height: "0px",
-              }}
+              style={{ transform: "translateY(0px)", top: 0, height: "0px" }}
               aria-hidden="true"
             />
 
-            {/* list */}
             <div ref={containerRef} className="space-y-6 pr-0">
               {items.map((it, idx) => (
-                <button
+                <motion.button
                   key={idx}
                   ref={itemRefs.current[idx]}
                   onClick={() => handleClick(idx)}
@@ -143,6 +137,11 @@ export default function AboutSection() {
                       ? "bg-white border"
                       : "bg-white/60 hover:bg-gray-100"
                   }`}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: false, amount: 0.2 }}
+                  variants={fadeUp}
+                  custom={idx + 1}
                 >
                   <div className="flex items-center justify-between gap-4">
                     <div>
@@ -157,8 +156,6 @@ export default function AboutSection() {
                         {it.desc}
                       </p>
                     </div>
-
-                    {/* small dot indicator for each item (optional) */}
                     <div
                       className={`w-8 h-8 p-3 flex items-center justify-center rounded-full border ${
                         active === idx
@@ -169,21 +166,33 @@ export default function AboutSection() {
                       {idx + 1}
                     </div>
                   </div>
-                </button>
+                </motion.button>
               ))}
             </div>
           </div>
-        </div>
-        {/* Left: Content with indicator */}
-        <div className="w-full md:w-1/2">
+        </motion.div>
+
+        {/* Left: Image */}
+        <motion.div
+          className="w-full md:w-1/2"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+          variants={fadeUp}
+          custom={1}
+        >
           <div className="rounded-lg overflow-hidden">
-            <img
+            <motion.img
+              key={currentImageIndex} // re-triggers fade when image changes
               src={images[currentImageIndex]}
               alt="Slideshow"
               className="w-full h-full object-cover md:h-[450px]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

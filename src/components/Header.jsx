@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
-import { Menu, X, ArrowUp } from "lucide-react"; // Added ArrowUp icon
+import { motion } from "framer-motion";
+import { Menu, X, ArrowUp } from "lucide-react";
 import logo from "../assets/logo/icone.png";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   const navItems = [
     { id: "home", label: "الرئيسية" },
     { id: "services", label: "الخدمات" },
-    // { id: "reviews", label: "آراء العملاء" },
     { id: "about", label: "من نحن" },
   ];
 
@@ -21,8 +22,6 @@ function Header() {
     setIsMenuOpen(false);
   };
 
-  const [activeSection, setActiveSection] = useState("home");
-
   useEffect(() => {
     const handleScroll = () => {
       const sections = ["home", "services", "about", "reviews", "contact"];
@@ -33,7 +32,6 @@ function Header() {
         if (element) {
           const offsetTop = element.offsetTop;
           const offsetHeight = element.offsetHeight;
-
           if (
             scrollPosition >= offsetTop &&
             scrollPosition < offsetTop + offsetHeight
@@ -48,20 +46,47 @@ function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Animation variants
+  const fadeLeft = {
+    hidden: { opacity: 0, x: -40 },
+    visible: (i) => ({
+      opacity: 1,
+      x: 0,
+      transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" },
+    }),
+  };
+
   return (
     <header className="bg-white border-b fixed top-0 w-full z-50">
       <div className="container mx-auto px-5">
         <div className="flex items-center justify-between py-5">
-          <div className="flex items-center gap-2 bg-black p-1 rounded-full">
+          {/* Animated Logo */}
+          <motion.div
+            className="flex items-center gap-2 bg-black p-1 rounded-full"
+            animate={{
+              scale: [1, 1.05, 1],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+          >
             <img src={logo} alt="" className="h-[60px] rounded-full" />
-            <span className="text-white font-bold text-xl pl-2">النجوم للمقاولات</span>
-          </div>
+            <span className="text-white font-bold text-xl pl-2">
+              النجوم للمقاولات
+            </span>
+          </motion.div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex gap-5 items-center">
-            {navItems.map((item) => (
-              <button
+            {navItems.map((item, i) => (
+              <motion.button
                 key={item.id}
+                custom={i}
+                initial="hidden"
+                animate="visible"
+                variants={fadeLeft}
                 onClick={() => scrollToSection(item.id)}
                 className={`text-gray-900 text-[20px] lg:text-[25px] ${
                   activeSection === item.id
@@ -70,18 +95,21 @@ function Header() {
                 }`}
               >
                 {item.label}
-              </button>
+              </motion.button>
             ))}
-            {/* New Contact Button */}
-            <button
+            <motion.button
+              custom={navItems.length}
+              initial="hidden"
+              animate="visible"
+              variants={fadeLeft}
               onClick={() => scrollToSection("contact")}
-              className="lg:flex hidden items-center gap-4 bg-black text-white px-4 py-3 text-[22px]  rounded-full hover:bg-gray-800 transition-colors"
+              className="lg:flex hidden items-center gap-4 bg-black text-white px-4 py-3 text-[22px] rounded-full hover:bg-gray-800 transition-colors"
             >
               تواصل معنا
               <span className="bg-white rounded-full text-black p-1">
                 <ArrowUp className="rotate-45" />
               </span>
-            </button>
+            </motion.button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -92,7 +120,7 @@ function Header() {
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
-          <div className="md:block hidden  rounded-full p-4 bg-gray-100 font-bold text-gray-900">
+          <div className="md:block hidden rounded-full p-4 bg-gray-100 font-bold text-gray-900">
             AS
           </div>
         </div>
@@ -100,25 +128,32 @@ function Header() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <nav className="md:hidden pb-4">
-            {navItems.map((item) => (
-              <button
+            {navItems.map((item, i) => (
+              <motion.button
                 key={item.id}
+                custom={i}
+                initial="hidden"
+                animate="visible"
+                variants={fadeLeft}
                 onClick={() => scrollToSection(item.id)}
                 className="block w-full text-right py-2 text-lg font-medium text-gray-700"
               >
                 {item.label}
-              </button>
+              </motion.button>
             ))}
-            {/* Mobile Contact Button */}
-            <button
+            <motion.button
+              custom={navItems.length}
+              initial="hidden"
+              animate="visible"
+              variants={fadeLeft}
               onClick={() => scrollToSection("contact")}
-              className="w-auto flex items-center justify-center gap-3  bg-black text-white px-4 py-2 rounded-full mt-2"
+              className="w-auto flex items-center justify-center gap-3 bg-black text-white px-4 py-2 rounded-full mt-2"
             >
               <div className="rounded-full p-1 bg-white">
                 <ArrowUp className="rotate-45 text-black" />
               </div>
               تواصل معنا
-            </button>
+            </motion.button>
           </nav>
         )}
       </div>

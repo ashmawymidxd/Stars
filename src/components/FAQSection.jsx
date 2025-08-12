@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { PlusCircle } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 function FAQSection() {
   const [openFAQ, setOpenFAQ] = useState(null);
@@ -22,25 +23,45 @@ function FAQSection() {
     },
   ];
 
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.15, duration: 0.5, ease: "easeOut" },
+    }),
+  };
+
   return (
-    <section className="bg-white mt-10">
+    <section className="bg-white">
       <div className="container mx-auto px-4">
-        <div className="w-2xl mx-auto">
+        <motion.div
+          className="w-2xl mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }} // 👈 will run each time in view
+          variants={fadeUp}
+          custom={0}
+        >
           <div className="text-center">
-            <p className="text-xl text-gray-400 font-bold"> الأسئلة الشائعة</p>
-            <h2 className="text-xl md:text-3xl font-bold text-gray-800 ">
-              كل ما تحتاج 
-              <span className="text-[black]">  لمعرفته</span>
+            <p className="text-xl text-gray-400 font-bold">الأسئلة الشائعة</p>
+            <h2 className="text-xl md:text-3xl font-bold text-gray-800">
+              كل ما تحتاج <span className="text-[black]">لمعرفته</span>
             </h2>
           </div>
 
           <div className="mt-10">
             {faqs.map((faq, index) => (
-              <div 
-                key={index} 
+              <motion.div
+                key={index}
                 className={`border border-gray-200 rounded-lg overflow-hidden my-3 ${
                   openFAQ === index ? "bg-gray-50" : ""
                 }`}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.2 }} // 👈 triggers on every scroll into view
+                variants={fadeUp}
+                custom={index + 1}
               >
                 <button
                   className="w-full px-6 py-4 text-right flex justify-between items-center hover:bg-gray-50 transition-colors"
@@ -49,21 +70,31 @@ function FAQSection() {
                   <span className="font-medium text-gray-800">
                     {faq.question}
                   </span>
-                  <PlusCircle
-                    className={`w-5 h-5 text-gray-500 transition-transform ${
-                      openFAQ === index ? "rotate-45" : ""
-                    }`}
-                  />
+                  <motion.div
+                    animate={{ rotate: openFAQ === index ? 45 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <PlusCircle className="w-5 h-5 text-gray-500" />
+                  </motion.div>
                 </button>
-                {openFAQ === index && (
-                  <div className="bg-white p-6">
-                    <p className="text-gray-600">{faq.answer}</p>
-                  </div>
-                )}
-              </div>
+
+                <AnimatePresence>
+                  {openFAQ === index && (
+                    <motion.div
+                      className="bg-white px-6 pb-6"
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <p className="text-gray-600">{faq.answer}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
