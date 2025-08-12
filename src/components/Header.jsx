@@ -52,9 +52,9 @@ function Header() {
     <header className="bg-white border-b fixed top-0 w-full z-50">
       <div className="container mx-auto px-5">
         <div className="flex items-center justify-between py-5">
-          <div className="flex items-center gap-4 bg-black p-1 rounded-full">
+          <div className="flex items-center gap-2 bg-black p-1 rounded-full">
             <img src={logo} alt="" className="h-[60px] rounded-full" />
-            <span className="text-white font-bold text-xl px-2">النجوم للمقاولات</span>
+            <span className="text-white font-bold text-xl pl-2">النجوم للمقاولات</span>
           </div>
 
           {/* Desktop Navigation */}
