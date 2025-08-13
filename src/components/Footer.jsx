@@ -58,12 +58,12 @@ function Footer() {
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  توريد وصيانة المباني
+                  تنظيف وصيانة المباني
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  خدمة تأجير الكمبروسر (ضاغط الهواء)
+                  كمبروسير تنظيف البيارات
                 </a>
               </li>
             </ul>
