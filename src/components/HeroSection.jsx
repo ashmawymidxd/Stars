@@ -61,6 +61,34 @@ function HeroSection() {
     }),
   };
 
+  // Pulse animation for buttons
+  const pulseAnimation = {
+    hidden: { scale: 1 },
+    visible: {
+      scale: [1, 1.05, 1],
+      transition: {
+        duration: 1.5,
+        ease: "easeInOut",
+        repeat: Infinity,
+      }
+    }
+  };
+
+  // Overlay animation
+  const overlayAnimation = {
+    hidden: { opacity: 0, scale: 1 },
+    visible: {
+      opacity: [0, 0.5, 0],
+      scale: [1, 1.3, 1.5],
+      transition: {
+        duration: 2,
+        ease: "easeOut",
+        repeat: Infinity,
+        repeatDelay: 0.5
+      }
+    }
+  };
+
   return (
     <section id="home" className="mt-[150px] bg-white">
       <div className="container mx-auto px-4">
@@ -78,7 +106,7 @@ function HeroSection() {
             والخدمية،
           </motion.h1>
 
-          {/* Buttons Animation */}
+          {/* Buttons with animations */}
           <motion.div
             className="flex justify-center gap-5 mt-10"
             initial="hidden"
@@ -86,26 +114,57 @@ function HeroSection() {
             variants={fadeUp}
             custom={1}
           >
-            <a
+            {/* Phone Button */}
+            <motion.a
               href="tel:+966567648029"
               target="__blank"
-              className="bg-black text-white px-4 py-3 rounded-full flex items-center gap-4 font-medium hover:bg-gray-800 transition-colors"
+              className="bg-black text-white px-4 py-3 rounded-full flex items-center gap-4 font-medium hover:bg-gray-800 transition-colors relative overflow-hidden"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <span className="bg-white text-black p-2 rounded-full flex items-center justify-center">
-                <Phone className="inline-block" />
-              </span>{" "}
+              <motion.span 
+                className="bg-white text-black p-2 rounded-full flex items-center justify-center relative"
+                variants={pulseAnimation}
+                initial="hidden"
+                animate="visible"
+              >
+                {/* Overlay circle */}
+                <motion.span
+                  className="absolute inset-0 bg-white rounded-full"
+                  variants={overlayAnimation}
+                  initial="hidden"
+                  animate="visible"
+                />
+                <Phone className="relative z-10" size={20} />
+              </motion.span>
               اتصل الآن
-            </a>
-            <a
+            </motion.a>
+
+            {/* WhatsApp Button */}
+            <motion.a
               href="https://wa.me/+966567648029"
               target="__blank"
-              className="border text-gray-800 px-4 py-3 flex items-center gap-4 rounded-full font-medium hover:bg-gray-200 transition-colors"
+              className="border text-gray-800 px-4 py-3 flex items-center gap-4 rounded-full font-medium hover:bg-gray-200 transition-colors relative overflow-hidden"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <span className="bg-black text-white p-2 rounded-full flex items-center justify-center">
-                <MessageCircleIcon className="inline-block" />
-              </span>
-              تواصل معنا{" "}
-            </a>
+              <motion.span 
+                className="bg-black text-white p-2 rounded-full flex items-center justify-center relative"
+                variants={pulseAnimation}
+                initial="hidden"
+                animate="visible"
+              >
+                {/* Overlay circle */}
+                <motion.span
+                  className="absolute inset-0 bg-black rounded-full"
+                  variants={overlayAnimation}
+                  initial="hidden"
+                  animate="visible"
+                />
+                <MessageCircleIcon className="relative z-10" size={20} />
+              </motion.span>
+              تواصل معنا
+            </motion.a>
           </motion.div>
         </div>
 
@@ -128,7 +187,7 @@ function HeroSection() {
                 >
                   <span className="p-1 rounded-full bg-white flex items-center justify-center">
                     <span className="p-1 rounded-full bg-black">
-                      <service.icon className="text-white" />
+                      <service.icon className="text-white" size={18} />
                     </span>
                   </span>
                   <h1 className="font-bold text-white text-xl">
