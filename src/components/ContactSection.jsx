@@ -7,38 +7,41 @@ function ContactSection() {
     visible: (i) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.15, duration: 0.5, ease: "easeOut" },
+      transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
     }),
   };
 
   const contactItems = [
     {
-      icon: <Phone size={20} />,
+      icon: <Phone size={22} />,
       title: "الهاتف",
       text: "+966567648029",
       link: "tel:+966567648029",
     },
     {
-      icon: <Mail size={20} />,
+      icon: <Mail size={22} />,
       title: "البريد الإلكتروني",
       text: "info@starsbusiness.com",
+      link: "mailto:info@starsbusiness.com",
     },
     {
-      icon: <MapPin size={20} />,
+      icon: <MapPin size={22} />,
       title: "عنوان المقر",
       text: "شارع الملك عبدالعزيز - الرياض 11431",
     },
     {
-      icon: <Clock size={20} />,
+      icon: <Clock size={22} />,
       title: "أوقات العمل",
       text: "السبت - الخميس: 8:00 ص - 6:00 م",
     },
   ];
 
   return (
-    <section id="contact" className="mt-10">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12">
+    <section id="contact" className="py-16">
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          
+          {/* Left Content */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -47,53 +50,61 @@ function ContactSection() {
             custom={0}
           >
             <div className="text-start">
-              <p className="text-xl text-gray-400 font-bold">اتصل بنا</p>
-              <h2 className="text-xl md:text-3xl font-bold text-gray-800 max-w-3xl">
-                الأن <span className="text-[black]">تواصل معنا</span> وأخبرنا
-                عن خططك التجارية، فنحن هنا لمساعدتك على مدار ساعة
+              <p className="text-lg text-gray-500 font-semibold mb-2">اتصل بنا</p>
+              <h2 className="text-2xl md:text-4xl font-extrabold text-gray-800 leading-snug">
+                <span className="text-black">تواصل معنا الآن</span> وشاركنا خططك التجارية
               </h2>
+              <p className="text-gray-600 mt-4 max-w-lg">
+                نحن هنا لمساعدتك والرد على جميع استفساراتك في أي وقت خلال ساعات العمل.
+              </p>
             </div>
 
-            <div className="my-10">
+            {/* Contact Info */}
+            <div className="mt-10 space-y-6">
               {contactItems.map((item, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center mt-3"
+                  className="flex items-start gap-4"
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: false, amount: 0.2 }}
                   variants={fadeUp}
                   custom={index + 1}
                 >
-                  <div className="bg-[black] text-white p-3 rounded-full ml-4">
+                  <div className="bg-black text-white p-3 rounded-full shadow-md">
                     {item.icon}
                   </div>
-                  {item.link ? (
-                    <a href={item.link}>
-                      <h4 className="font-bold text-gray-800">{item.title}</h4>
-                      <p className="text-gray-600">{item.text}</p>
-                    </a>
-                  ) : (
-                    <div>
-                      <h4 className="font-bold text-gray-800">{item.title}</h4>
-                      <p className="text-gray-600">{item.text}</p>
-                    </div>
-                  )}
+                  <div>
+                    {item.link ? (
+                      <a href={item.link} className="block hover:text-black transition-colors">
+                        <h4 className="font-bold text-gray-800">{item.title}</h4>
+                        <p className="text-gray-600">{item.text}</p>
+                      </a>
+                    ) : (
+                      <div>
+                        <h4 className="font-bold text-gray-800">{item.title}</h4>
+                        <p className="text-gray-600">{item.text}</p>
+                      </div>
+                    )}
+                  </div>
                 </motion.div>
               ))}
-
-              <motion.a
-                href="https://wa.me/+966567648029"
-                className="border w-60 flex mt-8 items-center justify-center bg-black text-gray-200 px-4 py-2 gap-4 rounded-full font-medium hover:bg-gray-700 transition-colors"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.2 }}
-                variants={fadeUp}
-                custom={contactItems.length + 1}
-              >
-                تواصل معنا عبر واتساب
-              </motion.a>
             </div>
+
+            {/* WhatsApp Button */}
+            <motion.a
+              href="https://wa.me/+966567648029"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex mt-8 items-center justify-center bg-black text-white px-6 py-3 gap-3 rounded-full font-medium shadow-lg hover:bg-green-700 transition-all"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.2 }}
+              variants={fadeUp}
+              custom={contactItems.length + 1}
+            >
+              تواصل عبر واتساب
+            </motion.a>
           </motion.div>
         </div>
       </div>
