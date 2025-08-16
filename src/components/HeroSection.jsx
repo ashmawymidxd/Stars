@@ -76,22 +76,23 @@ function HeroSection() {
           {/* Title */}
           <motion.h1
             className="text-xl md:text-3xl font-bold text-gray-800 mb-6 max-w-4xl m-auto leading-relaxed"
-            initial="hidden"
-            animate="visible"
             variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}
             custom={0}
           >
             شركة <span className="text-black">النجوم</span> للخدمات هي شركة
             مقاولات سعودية متخصصة في تقديم حلول متكاملة للمشاريع الإنشائية
-      
           </motion.h1>
 
           {/* Buttons */}
           <motion.div
             className="flex justify-center gap-5 mt-10"
-            initial="hidden"
-            animate="visible"
             variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}
             custom={1}
           >
             {/* Phone Button */}
@@ -155,15 +156,16 @@ function HeroSection() {
           }}
           className="w-full rounded-xl min-h-[80vh] flex flex-col items-center justify-center overflow-hidden mt-12 px-4 sm:px-6 lg:px-10 py-10"
         >
-          {/* Services Section */}
+          {/* Services */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl">
             {services.map((service, i) => (
               <motion.div
                 key={service.id}
                 className="bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all duration-300 cursor-pointer rounded-2xl p-6 flex flex-col gap-4 shadow-lg hover:shadow-xl"
-                initial="hidden"
-                animate="visible"
                 variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.2 }}
                 custom={i}
               >
                 <div className="flex items-center gap-3">
@@ -182,9 +184,10 @@ function HeroSection() {
           <div className="mt-10 text-center text-white max-w-5xl mx-auto px-4">
             <motion.h2
               className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-6"
-              initial="hidden"
-              animate="visible"
               variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.2 }}
               custom={0}
             >
               لماذا تختار{" "}
@@ -192,11 +195,18 @@ function HeroSection() {
                 شركة النجوم؟
               </span>
             </motion.h2>
-            <p className="text-gray-300 mb-12 leading-relaxed text-sm sm:text-base">
+            <motion.p
+              className="text-gray-300 mb-12 leading-relaxed text-sm sm:text-base"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.2 }}
+              custom={1}
+            >
               نلتزم بتقديم أعلى معايير الجودة في جميع خدماتنا مع التركيز على
               الموثوقية، الكفاءة، والالتزام بالمواعيد. هدفنا هو بناء علاقة طويلة
               الأمد مع عملائنا قائمة على الثقة والاحترافية.
-            </p>
+            </motion.p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
@@ -224,10 +234,11 @@ function HeroSection() {
                 <motion.div
                   key={i}
                   className="bg-white/10 backdrop-blur-md rounded-2xl p-6 flex flex-col items-center text-center shadow-lg hover:shadow-xl hover:bg-white/20 transition-all duration-300"
-                  initial="hidden"
-                  animate="visible"
                   variants={fadeUp}
-                  custom={i + 1}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: false, amount: 0.2 }}
+                  custom={i + 2}
                 >
                   <span
                     className={`${item.color} p-4 rounded-full mb-4 shadow-md shadow-black/30`}
