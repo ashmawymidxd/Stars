@@ -28,12 +28,12 @@ function HeroSection() {
     },
     {
       id: 4,
-      name: "توريد وصيانة المباني",
+      name: "تنظيف وصيانة المباني",
       icon: BuildingIcon,
     },
     {
       id: 5,
-      name: "خدمة تأجير الكمبروسر",
+      name: "كمبروسير تنظيف البيارات",
       icon: WindIcon,
     },
   ];
