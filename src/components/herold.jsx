@@ -1,13 +1,3 @@
-
-
-
-
-
-
-
-
-
-
 import { Phone, MessageCircleIcon } from "lucide-react";
 import banner from "../assets/hero/banner.jpg";
 import {
