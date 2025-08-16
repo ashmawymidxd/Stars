@@ -161,7 +161,7 @@ function HeroSection() {
             {services.map((service, i) => (
               <motion.div
                 key={service.id}
-                className="bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all duration-300 cursor-pointer rounded-2xl p-6 flex flex-col gap-4 shadow-lg hover:shadow-xl"
+                className="bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all duration-300 cursor-pointer rounded-full p-3 flex flex-col gap-4 shadow-lg hover:shadow-xl"
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
