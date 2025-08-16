@@ -1,5 +1,15 @@
+
+
+
+
+
+
+
+
+
+
 import { Phone, MessageCircleIcon } from "lucide-react";
-import banner from "../assets/hero/banner2.jpg";
+import banner from "../assets/hero/banner.jpg";
 import {
   RainbowIcon,
   BinocularsIcon,
@@ -15,31 +25,31 @@ function HeroSection() {
       id: 1,
       name: "توريد مياه",
       icon: RainbowIcon,
-      desc: "نوفّر خدمات توريد المياه النقية وفق أعلى معايير الجودة والالتزام، باستخدام صهاريج معقمة وخدمة سريعة تضمن وصول المياه بأمان وكفاءة.",
+      offset: "mr-0 md:mr-[-70px]",
     },
     {
       id: 2,
       name: "شفط الصرف الصحي",
       icon: BinocularsIcon,
-      desc: "حلول شفط ونقل الصرف الصحي بأحدث المعدات والآليات، مع التزام كامل بالاشتراطات البيئية والصحية للحفاظ على بيئة آمنة ونظيفة.",
+      offset: "mr-0 md:mr-[-20px]",
     },
     {
       id: 3,
       name: "مكافحة الحشرات",
       icon: InspectIcon,
-      desc: "خدمات مكافحة الحشرات باستخدام مواد آمنة ومرخصة، وفريق متخصص لضمان القضاء على الآفات مع حلول وقائية للحد من المخاطر الصحية.",
+      offset: "",
     },
     {
       id: 4,
-      name: "توريد وصيانة المباني",
+      name: "تنظيف وصيانة المباني",
       icon: BuildingIcon,
-      desc: "خبرة واسعة في صيانة وتوريد المباني السكنية والتجارية مع أعمال الترميم، الدهانات، الكهرباء والسباكة، بأعلى جودة وسلامة.",
+      offset: "mr-0 md:mr-[-20px]",
     },
     {
       id: 5,
-      name: "خدمة تأجير الكمبروسر",
+      name: "كمبروسير تنظيف البيارات",
       icon: WindIcon,
-      desc: "كمبروسرات هواء عالية الضغط لأعمال التكسير، حفر التربة، وتشغيل المعدات، إضافة لتنظيف البيارات وخطوط الصرف بكفاءة وأمان.",
+      offset: "mr-0 md:mr-[-70px]",
     },
   ];
 
@@ -52,14 +62,29 @@ function HeroSection() {
     }),
   };
 
+  const fadeLeft = {
+    hidden: { opacity: 0, x: -40 },
+    visible: (i) => ({
+      opacity: 1,
+      x: 0,
+      transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" },
+    }),
+  };
+
+  // Pulse animation for buttons
   const pulseAnimation = {
     hidden: { scale: 1 },
     visible: {
       scale: [1, 1.05, 1],
-      transition: { duration: 1.5, ease: "easeInOut", repeat: Infinity },
-    },
+      transition: {
+        duration: 1.5,
+        ease: "easeInOut",
+        repeat: Infinity,
+      }
+    }
   };
 
+  // Overlay animation
   const overlayAnimation = {
     hidden: { opacity: 0, scale: 1 },
     visible: {
@@ -69,18 +94,18 @@ function HeroSection() {
         duration: 2,
         ease: "easeOut",
         repeat: Infinity,
-        repeatDelay: 0.5,
-      },
-    },
+        repeatDelay: 0.5
+      }
+    }
   };
 
   return (
     <section id="home" className="mt-[150px] bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center">
-          {/* Title */}
+          {/* Title Animation */}
           <motion.h1
-            className="text-xl md:text-3xl font-bold text-gray-800 mb-6 max-w-4xl m-auto leading-relaxed"
+            className="text-xl md:text-3xl font-bold text-gray-800 mb-6 max-w-4xl m-auto"
             initial="hidden"
             animate="visible"
             variants={fadeUp}
@@ -88,11 +113,10 @@ function HeroSection() {
           >
             شركة <span className="text-black">النجوم</span> للخدمات هي شركة
             مقاولات سعودية متخصصة في تقديم حلول متكاملة للمشاريع الإنشائية
-            والخدمية، وفق أعلى معايير الجودة والسلامة. نسعى لدعم التنمية
-            المستدامة بما يتوافق مع رؤية السعودية 2030.
+            والخدمية،
           </motion.h1>
 
-          {/* Buttons */}
+          {/* Buttons with animations */}
           <motion.div
             className="flex justify-center gap-5 mt-10"
             initial="hidden"
@@ -104,16 +128,17 @@ function HeroSection() {
             <motion.a
               href="tel:+966567648029"
               target="__blank"
-              className="bg-black text-white px-5 py-3 rounded-full flex items-center gap-4 font-medium hover:bg-gray-800 transition-colors relative overflow-hidden "
+              className="bg-black text-white px-4 py-3 rounded-full flex items-center gap-4 font-medium hover:bg-gray-800 transition-colors relative overflow-hidden"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <motion.span
+              <motion.span 
                 className="bg-white text-black p-2 rounded-full flex items-center justify-center relative"
                 variants={pulseAnimation}
                 initial="hidden"
                 animate="visible"
               >
+                {/* Overlay circle */}
                 <motion.span
                   className="absolute inset-0 bg-white rounded-full"
                   variants={overlayAnimation}
@@ -129,16 +154,17 @@ function HeroSection() {
             <motion.a
               href="https://wa.me/+966567648029"
               target="__blank"
-              className="border text-gray-800 px-5 py-3 flex items-center gap-4 rounded-full font-medium hover:bg-gray-200 transition-colors relative overflow-hidden"
+              className="border text-gray-800 px-4 py-3 flex items-center gap-4 rounded-full font-medium hover:bg-gray-200 transition-colors relative overflow-hidden"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <motion.span
+              <motion.span 
                 className="bg-black text-white p-2 rounded-full flex items-center justify-center relative"
                 variants={pulseAnimation}
                 initial="hidden"
                 animate="visible"
               >
+                {/* Overlay circle */}
                 <motion.span
                   className="absolute inset-0 bg-black rounded-full"
                   variants={overlayAnimation}
@@ -152,37 +178,34 @@ function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Services Section */}
+        {/* Infographic Section */}
         <div
-          style={{
-            background: `linear-gradient(to top,rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url(${banner})`,
-            backgroundSize: "cover",
-          }}
-          className="w-full rounded-xl flex items-center justify-center overflow-hidden mt-[50px] py-10"
+          style={{ backgroundImage: `url(${banner})`, backgroundSize: 1490 }}
+          className="w-full h-[550px] bg-[#FDF3E0] rounded-xl flex items-center justify-between overflow-hidden mt-[50px]"
         >
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 w-full max-w-6xl">
-            {services.map((service, i) => (
-              <motion.div
-                key={service.id}
-                className="bg-white/10 backdrop-blur-md hover:bg-white/20 duration-300 cursor-pointer rounded-2xl p-5 flex flex-col gap-3 shadow-md"
-                initial="hidden"
-                animate="visible"
-                variants={fadeUp}
-                custom={i}
-              >
-                <div className="flex items-center gap-3">
-                  <span className="p-2 rounded-full bg-black">
-                    <service.icon className="text-white" size={22} />
+          <div className="flex justify-center items-center p-5 md:p-10 gap-10 w-full">
+            <span className="p-3 rounded-full overflow-hidden hidden md:block"></span>
+            <div className="w-full">
+              {services.map((service, i) => (
+                <motion.div
+                  key={service.id}
+                  className={`bg-[#000000b7] hover:bg-black hover:mr-0 ${service.offset} duration-300 cursor-pointer rounded-full p-2 md:w-[400px] flex items-center justify-start gap-3 my-3`}
+                  initial="hidden"
+                  animate="visible"
+                  variants={fadeLeft}
+                  custom={i}
+                >
+                  <span className="p-1 rounded-full bg-white flex items-center justify-center">
+                    <span className="p-1 rounded-full bg-black">
+                      <service.icon className="text-white" size={18} />
+                    </span>
                   </span>
-                  <h1 className="font-bold text-white text-lg">
+                  <h1 className="font-bold text-white text-xl">
                     {service.name}
                   </h1>
-                </div>
-                <p className="text-gray-200 text-sm leading-relaxed">
-                  {service.desc}
-                </p>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
