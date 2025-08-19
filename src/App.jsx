@@ -87,7 +87,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white hidden" dir="rtl">
+    <div className="min-h-screen bg-white" dir="rtl">
       <Loader visible={!pageReady} />
 
       {/* When loader is visible, pointer-events are blocked by Loader */}
