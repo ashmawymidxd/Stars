@@ -21,8 +21,8 @@ function ContactSection() {
     {
       icon: <Mail size={22} />,
       title: "البريد الإلكتروني",
-      text: "info@alnjum.com",
-      link: "mailto:info@alnjum.com",
+      text: "info@alnejum.com",
+      link: "mailto:info@alnejum.com",
     },
     {
       icon: <Clock size={22} />,

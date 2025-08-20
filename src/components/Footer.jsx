@@ -79,9 +79,9 @@ function Footer() {
                 <Phone size={16} className="ml-2" />
                 966567648029+
               </a>
-              <a href="mailto:info@alnjum.com" className="flex items-center">
+              <a href="mailto:info@alnejum.com" className="flex items-center">
                 <Mail size={16} className="ml-2" />
-                info@alnjum.com
+                info@alnejum.com
               </a>
               <p className="flex items-center">
                 <MapPin size={16} className="ml-2" />
