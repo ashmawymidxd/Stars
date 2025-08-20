@@ -1,7 +1,7 @@
 // src/components/AboutSection.jsx
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import aboutImg from "../assets/about/about.jpg";
+// import aboutImg from "../assets/about/about.jpg";
 import S1 from "../assets/services/s (1).jpg";
 import S2 from "../assets/services/s (2).jpg";
 import S3 from "../assets/services/s (3).jpg";
@@ -85,7 +85,7 @@ export default function AboutSection() {
     setActive(index);
   };
 
-  const images = [aboutImg, S1, S2, S3, S4, S5];
+  const images = [S1, S2, S3, S4, S5];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {

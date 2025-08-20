@@ -54,12 +54,18 @@ function Footer() {
             <h4 className="text-lg font-bold mb-4">روابط مهمة</h4>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a
+                  href="https://alnjum.com" target="__blanck"
+                  className="hover:text-white transition-colors"
+                >
                   عن الشركة
                 </a>
               </li>
               <li>
-                <a href="tel:+966567648029" className="hover:text-white transition-colors">
+                <a
+                  href="tel:+966567648029"
+                  className="hover:text-white transition-colors"
+                >
                   اتصل بنا
                 </a>
               </li>
@@ -73,10 +79,10 @@ function Footer() {
                 <Phone size={16} className="ml-2" />
                 966567648029+
               </a>
-              <p className="flex items-center">
+              <a href="mailto:info@alnjum.com" className="flex items-center">
                 <Mail size={16} className="ml-2" />
-                info@stars.com
-              </p>
+                info@alnjum.com
+              </a>
               <p className="flex items-center">
                 <MapPin size={16} className="ml-2" />
                 جدة - المملكة العربية السعودية
