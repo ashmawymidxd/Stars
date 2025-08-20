@@ -1,4 +1,3 @@
-
 import { Phone } from "lucide-react";
 import banner from "../assets/hero/banner2.jpg";
 import {
@@ -10,10 +9,10 @@ import {
   ThumbsUp,
   Brain,
   Award,
-  Clock
+  Clock,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import whatsapp from "../assets/icons/whatsapp.png"
+import whatsapp from "../assets/icons/whatsapp.png";
 
 function HeroSection() {
   const services = [
@@ -250,7 +249,9 @@ function HeroSection() {
                   viewport={{ once: false, amount: 0.2 }}
                   custom={i + 2}
                 >
-                  <span className={`${item.color} p-4 rounded-full mb-4 shadow-md shadow-black/30 flex items-center justify-center`}>
+                  <span
+                    className={`${item.color} p-4 rounded-full mb-4 shadow-md shadow-black/30 flex items-center justify-center`}
+                  >
                     <item.icon className="text-white" size={24} />
                   </span>
                   <h3 className="text-lg sm:text-xl font-semibold mb-2">
@@ -265,6 +266,26 @@ function HeroSection() {
           </div>
         </div>
       </div>
+      <motion.a
+        href="https://wa.me/+966567648029"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 bg-green-600 p-4 rounded-full shadow-lg flex items-center justify-center"
+        whileHover={{ scale: 1.15, rotate: 5 }}
+        whileTap={{ scale: 0.9 }}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+      >
+        <motion.img
+          src={whatsapp}
+          alt="WhatsApp"
+          className="w-8 h-8"
+          variants={pulseAnimation}
+          initial="hidden"
+          animate="visible"
+        />
+      </motion.a>
     </section>
   );
 }
