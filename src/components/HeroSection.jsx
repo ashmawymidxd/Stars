@@ -1,5 +1,12 @@
-import { Phone, MessageCircle, Shield, Droplets, Bug, Building, Wind, Clock, Award, Users, CheckCircle } from "lucide-react";
+import { Phone, MessageCircleIcon } from "lucide-react";
 import banner from "../assets/hero/banner2.jpg";
+import {
+  RainbowIcon,
+  BinocularsIcon,
+  InspectIcon,
+  BuildingIcon,
+  WindIcon,
+} from "lucide-react";
 import { motion } from "framer-motion";
 
 function HeroSection() {
@@ -7,27 +14,27 @@ function HeroSection() {
     {
       id: 1,
       name: "توريد مياه",
-      icon: Droplets, // More appropriate for water supply
+      icon: RainbowIcon,
     },
     {
       id: 2,
       name: "شفط الصرف الصحي",
-      icon: Wind, // Represents suction/vacuum
+      icon: BinocularsIcon,
     },
     {
       id: 3,
       name: "مكافحة الحشرات",
-      icon: Bug, // Directly represents pests
+      icon: InspectIcon,
     },
     {
       id: 4,
       name: "تنظيف وصيانة المباني",
-      icon: Building, // Good for buildings
+      icon: BuildingIcon,
     },
     {
       id: 5,
       name: "كمبروسير تنظيف البيارات",
-      icon: Shield, // Represents protection/cleaning
+      icon: WindIcon,
     },
   ];
 
@@ -79,7 +86,7 @@ function HeroSection() {
             مقاولات سعودية متخصصة في تقديم حلول متكاملة للمشاريع الإنشائية
           </motion.h1>
 
-          {/* Buttons - WhatsApp style */}
+          {/* Buttons */}
           <motion.div
             className="flex justify-center gap-5 mt-10"
             variants={fadeUp}
@@ -92,12 +99,12 @@ function HeroSection() {
             <motion.a
               href="tel:+966567648029"
               target="__blank"
-              className="bg-[#25D366] text-white px-5 py-3 rounded-full flex items-center gap-4 font-medium hover:bg-[#20bd5d] transition-colors relative overflow-hidden shadow-lg"
+              className="bg-black text-white px-5 py-3 rounded-full flex items-center gap-4 font-medium hover:bg-gray-800 transition-colors relative overflow-hidden "
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <motion.span
-                className="bg-white text-[#25D366] p-2 rounded-full flex items-center justify-center relative"
+                className="bg-white text-black p-2 rounded-full flex items-center justify-center relative"
                 variants={pulseAnimation}
                 initial="hidden"
                 animate="visible"
@@ -117,25 +124,25 @@ function HeroSection() {
             <motion.a
               href="https://wa.me/+966567648029"
               target="__blank"
-              className="bg-[#128C7E] text-white px-5 py-3 flex items-center gap-4 rounded-full font-medium hover:bg-[#0e786c] transition-colors relative overflow-hidden shadow-lg"
+              className="border text-gray-800 px-5 py-3 flex items-center gap-4 rounded-full font-medium hover:bg-gray-200 transition-colors relative overflow-hidden"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <motion.span
-                className="bg-white text-[#128C7E] p-2 rounded-full flex items-center justify-center relative"
+                className="bg-black text-white p-2 rounded-full flex items-center justify-center relative"
                 variants={pulseAnimation}
                 initial="hidden"
                 animate="visible"
               >
                 <motion.span
-                  className="absolute inset-0 bg-white rounded-full"
+                  className="absolute inset-0 bg-black rounded-full"
                   variants={overlayAnimation}
                   initial="hidden"
                   animate="visible"
                 />
-                <MessageCircle className="relative z-10" size={20} />
+                <MessageCircleIcon className="relative z-10" size={20} />
               </motion.span>
-              تواصل على واتساب
+              تواصل معنا
             </motion.a>
           </motion.div>
         </div>
@@ -154,31 +161,27 @@ function HeroSection() {
             {services.map((service, i) => (
               <motion.div
                 key={service.id}
-                className="bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all duration-300 cursor-pointer rounded-2xl p-5 flex flex-col gap-4 shadow-lg hover:shadow-xl border border-white/20"
+                className="bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all duration-300 cursor-pointer rounded-full p-3 flex flex-col gap-4 shadow-lg hover:shadow-xl"
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: false, amount: 0.2 }}
                 custom={i}
               >
-                <div className="flex items-center gap-4">
-                  <span className="p-3 rounded-full bg-[#25D366] flex items-center justify-center shadow-md">
+                <div className="flex items-center gap-3">
+                  <span className="p-3 rounded-full bg-black/70 flex items-center justify-center">
                     <service.icon className="text-white" size={24} />
                   </span>
                   <h1 className="font-bold text-white text-lg sm:text-xl">
                     {service.name}
                   </h1>
                 </div>
-                <div className="flex items-center text-white/80 text-sm mt-2">
-                  <CheckCircle size={16} className="ml-1" />
-                  <span>خدمة سريعة ومضمونة</span>
-                </div>
               </motion.div>
             ))}
           </div>
 
           {/* لماذا نحن Section */}
-          <div className="mt-16 text-center text-white max-w-5xl mx-auto px-4">
+          <div className="mt-10 text-center text-white max-w-5xl mx-auto px-4">
             <motion.h2
               className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-6"
               variants={fadeUp}
@@ -188,7 +191,7 @@ function HeroSection() {
               custom={0}
             >
               لماذا تختار{" "}
-              <span className="text-[#25D366] drop-shadow-md">
+              <span className="text-yellow-400 drop-shadow-md">
                 شركة النجوم؟
               </span>
             </motion.h2>
@@ -208,38 +211,38 @@ function HeroSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
-                  icon: Clock,
+                  color: "bg-yellow-400",
                   title: "الموثوقية",
                   text: "خدماتنا معتمدة من الجهات الرسمية، ونلتزم بجودة التنفيذ والدقة.",
                 },
                 {
-                  icon: Users,
+                  color: "bg-green-500",
                   title: "الخبرة",
                   text: "فريق عمل متخصص يمتلك خبرة طويلة في تقديم حلول متكاملة باحترافية عالية.",
                 },
                 {
-                  icon: Award,
+                  color: "bg-blue-500",
                   title: "الجودة",
                   text: "نستخدم معدات متطورة ومواد آمنة لضمان أعلى معايير الجودة والسلامة.",
                 },
                 {
-                  icon: CheckCircle,
+                  color: "bg-red-500",
                   title: "الالتزام",
                   text: "نحرص على تسليم المشاريع والخدمات وفق الجداول الزمنية المحددة بلا تأخير.",
                 },
               ].map((item, i) => (
                 <motion.div
                   key={i}
-                  className="bg-white/10 backdrop-blur-md rounded-2xl p-6 flex flex-col items-center text-center shadow-lg hover:shadow-xl hover:bg-white/20 transition-all duration-300 border border-white/10"
+                  className="bg-white/10 backdrop-blur-md rounded-2xl p-6 flex flex-col items-center text-center shadow-lg hover:shadow-xl hover:bg-white/20 transition-all duration-300"
                   variants={fadeUp}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: false, amount: 0.2 }}
                   custom={i + 2}
                 >
-                  <span className="bg-[#25D366] p-4 rounded-full mb-4 shadow-md">
-                    <item.icon className="text-white" size={24} />
-                  </span>
+                  <span
+                    className={`${item.color} p-4 rounded-full mb-4 shadow-md shadow-black/30`}
+                  />
                   <h3 className="text-lg sm:text-xl font-semibold mb-2">
                     {item.title}
                   </h3>
@@ -249,17 +252,6 @@ function HeroSection() {
                 </motion.div>
               ))}
             </div>
-            
-            {/* WhatsApp Floating Button */}
-            <motion.a
-              href="https://wa.me/+966567648029"
-              target="__blank"
-              className="fixed bottom-6 left-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg z-50 hover:bg-[#20bd5d] transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <MessageCircle size={28} />
-            </motion.a>
           </div>
         </div>
       </div>
