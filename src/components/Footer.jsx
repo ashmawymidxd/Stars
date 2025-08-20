@@ -55,7 +55,7 @@ function Footer() {
             <ul className="space-y-2 text-gray-400">
               <li>
                 <a
-                  href="https://alnjum.com" target="__blanck"
+                  href="https://alnejum.com" target="__blanck"
                   className="hover:text-white transition-colors"
                 >
                   عن الشركة
