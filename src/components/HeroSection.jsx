@@ -1,11 +1,15 @@
-import { Phone, MessageCircleIcon } from "lucide-react";
+import { Phone, MessageCircle } from "lucide-react";
 import banner from "../assets/hero/banner2.jpg";
 import {
-  RainbowIcon,
-  BinocularsIcon,
-  InspectIcon,
-  BuildingIcon,
-  WindIcon,
+  Droplets,
+  Shovel,
+  Bug,
+  Building2,
+  Fan,
+  ThumbsUp,
+  Brain,
+  Award,
+  Clock
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -14,27 +18,27 @@ function HeroSection() {
     {
       id: 1,
       name: "توريد مياه",
-      icon: RainbowIcon,
+      icon: Droplets,
     },
     {
       id: 2,
       name: "شفط الصرف الصحي",
-      icon: BinocularsIcon,
+      icon: Shovel,
     },
     {
       id: 3,
       name: "مكافحة الحشرات",
-      icon: InspectIcon,
+      icon: Bug,
     },
     {
       id: 4,
       name: "تنظيف وصيانة المباني",
-      icon: BuildingIcon,
+      icon: Building2,
     },
     {
       id: 5,
       name: "كمبروسير تنظيف البيارات",
-      icon: WindIcon,
+      icon: Fan,
     },
   ];
 
@@ -129,20 +133,20 @@ function HeroSection() {
               whileTap={{ scale: 0.95 }}
             >
               <motion.span
-                className="bg-black text-white p-2 rounded-full flex items-center justify-center relative"
+                className="bg-green-600 text-white p-2 rounded-full flex items-center justify-center relative"
                 variants={pulseAnimation}
                 initial="hidden"
                 animate="visible"
               >
                 <motion.span
-                  className="absolute inset-0 bg-black rounded-full"
+                  className="absolute inset-0 bg-green-600 rounded-full"
                   variants={overlayAnimation}
                   initial="hidden"
                   animate="visible"
                 />
-                <MessageCircleIcon className="relative z-10" size={20} />
+                <MessageCircle className="relative z-10" size={20} />
               </motion.span>
-              تواصل معنا
+              واتساب
             </motion.a>
           </motion.div>
         </div>
@@ -211,21 +215,25 @@ function HeroSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
+                  icon: ThumbsUp,
                   color: "bg-yellow-400",
                   title: "الموثوقية",
                   text: "خدماتنا معتمدة من الجهات الرسمية، ونلتزم بجودة التنفيذ والدقة.",
                 },
                 {
+                  icon: Brain,
                   color: "bg-green-500",
                   title: "الخبرة",
                   text: "فريق عمل متخصص يمتلك خبرة طويلة في تقديم حلول متكاملة باحترافية عالية.",
                 },
                 {
+                  icon: Award,
                   color: "bg-blue-500",
                   title: "الجودة",
                   text: "نستخدم معدات متطورة ومواد آمنة لضمان أعلى معايير الجودة والسلامة.",
                 },
                 {
+                  icon: Clock,
                   color: "bg-red-500",
                   title: "الالتزام",
                   text: "نحرص على تسليم المشاريع والخدمات وفق الجداول الزمنية المحددة بلا تأخير.",
@@ -240,9 +248,9 @@ function HeroSection() {
                   viewport={{ once: false, amount: 0.2 }}
                   custom={i + 2}
                 >
-                  <span
-                    className={`${item.color} p-4 rounded-full mb-4 shadow-md shadow-black/30`}
-                  />
+                  <span className={`${item.color} p-4 rounded-full mb-4 shadow-md shadow-black/30 flex items-center justify-center`}>
+                    <item.icon className="text-white" size={24} />
+                  </span>
                   <h3 className="text-lg sm:text-xl font-semibold mb-2">
                     {item.title}
                   </h3>

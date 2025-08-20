@@ -6,7 +6,7 @@ import HeroSection from "./components/HeroSection";
 import ServicesSection from "./components/ServicesSection";
 import AboutSection from "./components/AboutSection";
 // import ReviewsSection from "./components/ReviewsSection";
-import FAQSection from "./components/FAQSection";
+// import FAQSection from "./components/FAQSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 
@@ -97,7 +97,7 @@ function App() {
         <HeroSection ready={sectionsReady.hero} />
         <ServicesSection ready={sectionsReady.services} />
         {/* <ReviewsSection ready={sectionsReady.reviews} /> */}
-        <FAQSection ready={sectionsReady.faq} />
+        {/* <FAQSection ready={sectionsReady.faq} /> */}
         <ContactSection ready={sectionsReady.contact} />
         <AboutSection ready={sectionsReady.about} />
       </div>

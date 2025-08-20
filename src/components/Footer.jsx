@@ -16,26 +16,6 @@ function Footer() {
               شركة مقاولات سعودية متخصصة في تقديم حلول إنشائية متكاملة بأعلى
               معايير الجودة.
             </p>
-            <div className="flex gap-3">
-              <a
-                href="#"
-                className="bg-gray-800 p-2 rounded-full hover:bg-gray-700 transition-colors"
-              >
-                <span className="text-white">📘</span>
-              </a>
-              <a
-                href="#"
-                className="bg-gray-800 p-2 rounded-full hover:bg-gray-700 transition-colors"
-              >
-                <span className="text-white">🐦</span>
-              </a>
-              <a
-                href="#"
-                className="bg-gray-800 p-2 rounded-full hover:bg-gray-700 transition-colors"
-              >
-                <span className="text-white">📷</span>
-              </a>
-            </div>
           </div>
 
           <div>
@@ -79,21 +59,6 @@ function Footer() {
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  مشاريعنا
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  آراء العملاء
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  الوظائف
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
                   اتصل بنا
                 </a>
               </li>
@@ -105,15 +70,15 @@ function Footer() {
             <div className="space-y-3 text-gray-400">
               <a href="tel:+966567648029" className="flex items-center">
                 <Phone size={16} className="ml-2" />
-                +966567648029
+                966567648029+
               </a>
               <p className="flex items-center">
                 <Mail size={16} className="ml-2" />
-                info@starsbusiness.com
+                info@stars.com
               </p>
               <p className="flex items-center">
                 <MapPin size={16} className="ml-2" />
-                الرياض، المملكة العربية السعودية
+               المملكة العربية السعودية
               </p>
             </div>
           </div>

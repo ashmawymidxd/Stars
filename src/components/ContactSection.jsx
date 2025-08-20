@@ -1,6 +1,6 @@
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, Clock } from "lucide-react";
 import { motion } from "framer-motion";
-
+import { MessageCircle } from "lucide-react";
 function ContactSection() {
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
@@ -15,24 +15,19 @@ function ContactSection() {
     {
       icon: <Phone size={22} />,
       title: "الهاتف",
-      text: "+966567648029",
+      text: "966567648029+",
       link: "tel:+966567648029",
     },
     {
       icon: <Mail size={22} />,
       title: "البريد الإلكتروني",
-      text: "info@starsbusiness.com",
-      link: "mailto:info@starsbusiness.com",
-    },
-    {
-      icon: <MapPin size={22} />,
-      title: "عنوان المقر",
-      text: "شارع الملك عبدالعزيز - الرياض 11431",
+      text: "info@Stars.com",
+      link: "mailto:info@Stars.com",
     },
     {
       icon: <Clock size={22} />,
       title: "أوقات العمل",
-      text: "السبت - الخميس: 8:00 ص - 6:00 م",
+      text: "نعمل 24 - ساعة علي مدار الاسبوع",
     },
   ];
 
@@ -103,6 +98,7 @@ function ContactSection() {
               variants={fadeUp}
               custom={contactItems.length + 1}
             >
+              <MessageCircle />
               تواصل عبر واتساب
             </motion.a>
           </motion.div>
