@@ -13,6 +13,7 @@ import {
   Clock
 } from "lucide-react";
 import { motion } from "framer-motion";
+import whatsapp from "../assets/icons/whatsapp.png"
 
 function HeroSection() {
   const services = [
@@ -145,7 +146,7 @@ function HeroSection() {
                   initial="hidden"
                   animate="visible"
                 />
-                <img src="/public/whatsapp.png" alt="" width={20} />
+                <img src={whatsapp} alt="" width={20} />
               </motion.span>
               واتساب
             </motion.a>

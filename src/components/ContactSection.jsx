@@ -1,5 +1,6 @@
 import { Phone, Mail, Clock } from "lucide-react";
 import { motion } from "framer-motion";
+import whatsapp from "../assets/icons/whatsapp.png"
 function ContactSection() {
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
@@ -97,7 +98,7 @@ function ContactSection() {
               variants={fadeUp}
               custom={contactItems.length + 1}
             >
-              <img src="/public/whatsapp.png" alt="" width={20} />
+              <img src={whatsapp} alt="" width={20} />
               تواصل عبر واتساب
             </motion.a>
           </motion.div>
