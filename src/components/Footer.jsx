@@ -22,27 +22,28 @@ function Footer() {
             <h4 className="text-lg font-bold mb-4">خدماتنا</h4>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                {/*   onClick={() => scrollToSection(item.id)} */}
+                <a href="#s1" className="hover:text-white transition-colors">
                   توريد المياة
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#s2" className="hover:text-white transition-colors">
                   شطف الصرف الصحي
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#s3" className="hover:text-white transition-colors">
                   مكافحة الحشرات
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#s4" className="hover:text-white transition-colors">
                   تنظيف وصيانة المباني
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#s5" className="hover:text-white transition-colors">
                   كمبروسير تنظيف البيارات
                 </a>
               </li>
@@ -58,7 +59,7 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="tel:+966567648029" className="hover:text-white transition-colors">
                   اتصل بنا
                 </a>
               </li>
@@ -78,7 +79,7 @@ function Footer() {
               </p>
               <p className="flex items-center">
                 <MapPin size={16} className="ml-2" />
-               المملكة العربية السعودية
+                جدة - المملكة العربية السعودية
               </p>
             </div>
           </div>

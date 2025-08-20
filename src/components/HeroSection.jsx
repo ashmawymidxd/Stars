@@ -1,4 +1,5 @@
-import { Phone, MessageCircle } from "lucide-react";
+
+import { Phone } from "lucide-react";
 import banner from "../assets/hero/banner2.jpg";
 import {
   Droplets,
@@ -144,7 +145,7 @@ function HeroSection() {
                   initial="hidden"
                   animate="visible"
                 />
-                <MessageCircle className="relative z-10" size={20} />
+                <img src="/public/whatsapp.png" alt="" width={20} />
               </motion.span>
               واتساب
             </motion.a>

@@ -1,6 +1,5 @@
 import { Phone, Mail, Clock } from "lucide-react";
 import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
 function ContactSection() {
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
@@ -27,12 +26,12 @@ function ContactSection() {
     {
       icon: <Clock size={22} />,
       title: "أوقات العمل",
-      text: "نعمل 24 - ساعة علي مدار الاسبوع",
+      text: "نعمل 24 -  ساعة في اليوم - علي مدار الاسبوع",
     },
   ];
 
   return (
-    <section id="contact" className="py-16">
+    <section id="contact">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           
@@ -50,7 +49,7 @@ function ContactSection() {
                 <span className="text-black">تواصل معنا الآن</span> وشاركنا خططك التجارية
               </h2>
               <p className="text-gray-600 mt-4 max-w-lg">
-                نحن هنا لمساعدتك والرد على جميع استفساراتك في أي وقت خلال ساعات العمل.
+                نحن هنا لمساعدتك والرد على جميع استفساراتك في أي وقت خلال 24 ساعة.
               </p>
             </div>
 
@@ -98,7 +97,7 @@ function ContactSection() {
               variants={fadeUp}
               custom={contactItems.length + 1}
             >
-              <MessageCircle />
+              <img src="/public/whatsapp.png" alt="" width={20} />
               تواصل عبر واتساب
             </motion.a>
           </motion.div>
